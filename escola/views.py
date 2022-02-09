@@ -24,7 +24,7 @@ class CursosViewSets(viewsets.ModelViewSet):
 
 
 class MatriculasViewSets(viewsets.ModelViewSet):
-    """Exibe todos os curos"""
+    """Exibe todas as matrículas"""
     queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
     authentication_classes = [BasicAuthentication]
@@ -32,7 +32,7 @@ class MatriculasViewSets(viewsets.ModelViewSet):
 
 
 class ListaMatriculasAluno(generics.ListAPIView):
-    """Lista matrículas de um aluno"""
+    """Lista matrículas de um aluno ou aluna"""
 
     def get_queryset(self):
         queryset = Matricula.objects.filter(aluno_id=self.kwargs['pk'])
